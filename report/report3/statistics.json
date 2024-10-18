@@ -1,0 +1,50 @@
+{
+  "Check request status and get content IDs " : {
+    "transaction" : "Check request status and get content IDs ",
+    "sampleCount" : 30,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 288.1333333333333,
+    "medianResTime" : 209.0,
+    "minResTime" : 159.0,
+    "maxResTime" : 1198.0,
+    "pct1ResTime" : 512.2000000000003,
+    "pct2ResTime" : 1150.1499999999999,
+    "pct3ResTime" : 1198.0,
+    "throughput" : 1.800288046087374,
+    "receivedKBytesPerSec" : 6.813844121309409,
+    "sentKBytesPerSec" : 0.5133633881421027
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 60,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 778.5000000000001,
+    "medianResTime" : 689.0,
+    "minResTime" : 159.0,
+    "maxResTime" : 3307.0,
+    "pct1ResTime" : 1526.6,
+    "pct2ResTime" : 2177.7499999999986,
+    "pct3ResTime" : 3307.0,
+    "throughput" : 3.293084522502744,
+    "receivedKBytesPerSec" : 8.643435699094402,
+    "sentKBytesPerSec" : 6.468788590834248
+  },
+  "Create Content ID request" : {
+    "transaction" : "Create Content ID request",
+    "sampleCount" : 30,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 1268.8666666666668,
+    "medianResTime" : 1054.5,
+    "minResTime" : 579.0,
+    "maxResTime" : 3307.0,
+    "pct1ResTime" : 2161.500000000001,
+    "pct2ResTime" : 2957.7499999999995,
+    "pct3ResTime" : 3307.0,
+    "throughput" : 1.668335001668335,
+    "receivedKBytesPerSec" : 2.4434156378600824,
+    "sentKBytesPerSec" : 6.078669815648983
+  }
+}

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Content API Performance">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="path" elementType="Argument">
+            <stringProp name="Argument.name">path</stringProp>
+            <stringProp name="Argument.value">attask/api/v18.0/optask</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="apiKey" elementType="Argument">
+            <stringProp name="Argument.name">apiKey</stringProp>
+            <stringProp name="Argument.value">1e6ya2swsgatvrjupic9rw6e50dkhkie</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">0</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">-1</intProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Content ID request">
+          <stringProp name="HTTPSampler.domain">servicenowinc.my.workfront.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="projectID" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">63dbf9a60010a737dcfe93d92f11a790</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">projectID</stringProp>
+              </elementProp>
+              <elementProp name="name" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Demo Request 2</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">name</stringProp>
+              </elementProp>
+              <elementProp name="DE:api_SourceDAM" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">sharepoint</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">DE:api_SourceDAM</stringProp>
+              </elementProp>
+              <elementProp name="categoryID" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">66576b4f0024c748807d2411ffb6f879</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">categoryID</stringProp>
+              </elementProp>
+              <elementProp name="DE:api_contentList" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;content&quot;:[{&quot;name&quot;:&quot;MP-File01.pdf&quot;,&quot;UUID&quot;:&quot;UUID-001&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File02.pdf&quot;,&quot;UUID&quot;:&quot;UUID-002&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File03.pdf&quot;,&quot;UUID&quot;:&quot;UUID-003&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File04.pdf&quot;,&quot;UUID&quot;:&quot;UUID-004&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File05.pdf&quot;,&quot;UUID&quot;:&quot;UUID-005&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File06.pdf&quot;,&quot;UUID&quot;:&quot;UUID-006&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File07.pdf&quot;,&quot;UUID&quot;:&quot;UUID-007&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File08.pdf&quot;,&quot;UUID&quot;:&quot;UUID-008&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File09.pdf&quot;,&quot;UUID&quot;:&quot;UUID-009&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File10.pdf&quot;,&quot;UUID&quot;:&quot;UUID-010&quot;,&quot;language&quot;:&quot;en-us&quot;},{&quot;name&quot;:&quot;MP-File01.pdf&quot;,&quot;UUID&quot;:&quot;UUID-011&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File02.pdf&quot;,&quot;UUID&quot;:&quot;UUID-012&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File03.pdf&quot;,&quot;UUID&quot;:&quot;UUID-013&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File04.pdf&quot;,&quot;UUID&quot;:&quot;UUID-014&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File05.pdf&quot;,&quot;UUID&quot;:&quot;UUID-015&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File06.pdf&quot;,&quot;UUID&quot;:&quot;UUID-016&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File07.pdf&quot;,&quot;UUID&quot;:&quot;UUID-017&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File08.pdf&quot;,&quot;UUID&quot;:&quot;UUID-018&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File09.pdf&quot;,&quot;UUID&quot;:&quot;UUID-019&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File10.pdf&quot;,&quot;UUID&quot;:&quot;UUID-020&quot;,&quot;language&quot;:&quot;nl-nl&quot;},{&quot;name&quot;:&quot;MP-File01.pdf&quot;,&quot;UUID&quot;:&quot;UUID-021&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File02.pdf&quot;,&quot;UUID&quot;:&quot;UUID-022&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File03.pdf&quot;,&quot;UUID&quot;:&quot;UUID-023&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File04.pdf&quot;,&quot;UUID&quot;:&quot;UUID-024&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File05.pdf&quot;,&quot;UUID&quot;:&quot;UUID-025&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File06.pdf&quot;,&quot;UUID&quot;:&quot;UUID-026&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File07.pdf&quot;,&quot;UUID&quot;:&quot;UUID-027&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File08.pdf&quot;,&quot;UUID&quot;:&quot;UUID-028&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File09.pdf&quot;,&quot;UUID&quot;:&quot;UUID-029&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File10.pdf&quot;,&quot;UUID&quot;:&quot;UUID-030&quot;,&quot;language&quot;:&quot;fr-ca&quot;},{&quot;name&quot;:&quot;MP-File01.pdf&quot;,&quot;UUID&quot;:&quot;UUID-031&quot;,&quot;language&quot;:&quot;de-de&quot;},{&quot;name&quot;:&quot;MP-File10.pdf&quot;,&quot;UUID&quot;:&quot;UUID-100&quot;,&quot;language&quot;:&quot;es-es&quot;}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">DE:api_contentList</stringProp>
+                <stringProp name="HTTPArgument.content_type">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">apiKey</stringProp>
+                <stringProp name="Header.value">${apiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="77184">NEW</stringProp>
+              <stringProp name="-892481550">status</stringProp>
+              <stringProp name="2331">ID</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <HTMLAssertion guiclass="HTMLAssertionGui" testclass="HTMLAssertion" testname="HTML Assertion">
+            <longProp name="html_assertion_error_threshold">0</longProp>
+            <longProp name="html_assertion_warning_threshold">3</longProp>
+            <stringProp name="html_assertion_doctype">omit</stringProp>
+            <boolProp name="html_assertion_errorsonly">false</boolProp>
+            <longProp name="html_assertion_format">0</longProp>
+            <stringProp name="html_assertion_filename"></stringProp>
+          </HTMLAssertion>
+          <hashTree/>
+          <XMLAssertion guiclass="XMLAssertionGui" testclass="XMLAssertion" testname="XML Assertion" enabled="false"/>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">ID</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;ID&quot;:&quot;([^&quot;]+)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Not Found</stringProp>
+            <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Check request status and get content IDs ">
+          <stringProp name="HTTPSampler.domain">servicenowinc.my.workfront.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">${path}</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="ID" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${ID}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">ID</stringProp>
+              </elementProp>
+              <elementProp name="fields" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">status,DE:api_contentList,DE:api_contentListWithIDs</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">fields</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">apiKey</stringProp>
+                <stringProp name="Header.value">${apiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">C:\JmeterProjects\result.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
